@@ -42,13 +42,13 @@ function auto_version($file)
 }
 
 
-function g($param) {
+function g($param, $default = null) {
     global $_GET, $_POST, $_COOKIE;
 
-    if (isset($_COOKIE[$param])) return $_COOKIE[$param];
+    //if (isset($_COOKIE[$param])) return $_COOKIE[$param];
     if (isset($_POST[$param])) return $_POST[$param];
     if (isset($_GET[$param])) return $_GET[$param];
-    return false;
+    return $default;
 }
 
 function gt($param) {

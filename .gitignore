@@ -3,3 +3,5 @@
 app
 static
 .htaccess
+*.ico
+robots.txt

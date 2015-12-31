@@ -6,7 +6,7 @@
  * Time: 10:54 AM
  */
 
-class PA_Controller{
+class Controller{
     public $db;
 
     function __construct(){
