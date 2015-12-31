@@ -712,9 +712,9 @@ class MysqliDb
 
         $this->count = 0;
         while ($stmt->fetch()) {
-            $x = array();
+            $x = new stdClass();
             foreach ($row as $key => $val) {
-                $x[$key] = $val;
+                $x->$key = $val;
             }
             $this->count++;
             array_push($results, $x);

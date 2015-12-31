@@ -11,5 +11,6 @@ class Controller{
 
     function __construct(){
         $this->db = st_db_object();
+        session_start();
     }
 }

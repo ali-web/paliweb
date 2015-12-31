@@ -57,6 +57,45 @@ function gt($param) {
     return trim($val);
 }
 
+
+function get_value(&$var, $default = null)
+{
+    return (isset($var)) ? $var : $default;
+}
+
+
+function get_string($array, $index, $default = null)
+{
+    if (isset($array[$index]) && strlen($value = trim($array[$index])) > 0) {
+        return $value;
+    } else {
+        return $default;
+    }
+}
+
+
+function get_integer($array, $index, $default = 0)
+    //if it exists and is something like 2 or "2", return it as integer by casting
+    // if not exists , return 0 instead of null
+{
+    if (isset($array[$index]) && is_integer_input($array[$index])) {
+        return (int)$array[$index];
+    } else {
+        return $default;
+    }
+}
+
+
+function get_array($array, $index, $default = null)
+{
+    if (isset($array[$index]) && is_array($array[$index])) {
+        return $array[$index];
+    } else {
+        return $default;
+    }
+}
+
+
 function utf8entities($s) {
     return htmlentities($s,ENT_COMPAT,'UTF-8');
 }
